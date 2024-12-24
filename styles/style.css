@@ -4,6 +4,7 @@ body {
   color: #eee;
   background: #1b244a;
   font-family: "Cursed Timer", sans-serif;
+  text-transform: uppercase;
 }
 
 .page {
@@ -49,7 +50,6 @@ section {
 
 h2 {
   font-size: 2.5rem;
-  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
@@ -77,15 +77,10 @@ h2 {
   margin-top: 30px;
 }
 
-.score-btn {
-  width: 45px;
-  height: 45px;
-
+button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
-  font-size: 1.125rem;
 
   border-radius: 5px;
   border: 2px solid #9aabd8;
@@ -94,11 +89,49 @@ h2 {
   cursor: pointer;
 }
 
-.score-btn:hover {
+.score-btn {
+  width: 45px;
+  height: 45px;
+
+  font-size: 1.125rem;
+}
+
+button:hover {
   color: #fbbf24;
   border-color: #fbbf24;
 }
 
 .score-btn:active {
   scale: 0.95;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 60px 0 15px;
+}
+
+.fouls {
+  background: #080001;
+  width: 140px;
+  height: 120px;
+  padding: 15px;
+  border-radius: 5px;
+
+  font-size: 5.625rem;
+  line-height: 0.8;
+  color: #f94f6d;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.add-foul {
+  width: 80px;
+  height: 45px;
+  margin-top: 15px;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
 }
