@@ -1,3 +1,4 @@
+@import "reset.css";
 @import "fonts.css";
 
 body {
@@ -42,6 +43,7 @@ main {
 
 section {
   margin: 40px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,31 +63,42 @@ h2 {
   margin-bottom: 20px;
 }
 
-.score {
-  background: #080001;
-  width: 200px;
-  height: 120px;
+.score,
+.fouls,
+.time-span,
+.period {
   padding: 15px;
   border-radius: 5px;
 
-  font-size: 5.625rem;
-  line-height: 0.8;
+  background: #080001;
   color: #f94f6d;
+
+  line-height: 0.8;
 
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
+.score {
+  width: 200px;
+  height: 120px;
+
+  font-size: 5.625rem;
+}
+
 .score-btns {
+  margin-top: 30px;
+
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-top: 30px;
 }
 
 button {
+  height: 45px;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -99,102 +112,39 @@ button {
 
 button:disabled {
   cursor: not-allowed;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .score-btn {
   width: 45px;
-  height: 45px;
-
-  font-size: 1.125rem;
-}
-
-button:not(:disabled):hover {
-  color: #fbbf24;
-  border-color: #fbbf24;
-}
-
-.score-btn:active {
-  scale: 0.95;
-}
-
-h3 {
-  font-size: 1.625rem;
-  margin: 60px 0 15px;
-}
-
-.fouls {
-  background: #080001;
-  width: 115px;
-  height: 90px;
-  padding: 15px;
-  border-radius: 5px;
-
-  font-size: 4rem;
-  line-height: 0.8;
-  color: #f94f6d;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.add-foul {
-  width: 80px;
-  height: 45px;
-  margin-top: 15px;
-
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-section:has(.time) {
-  margin-top: 75px;
-}
-
-.time {
-  display: flex;
-  justify-content: center;
+  gent: center;
   align-items: center;
   font-size: 6rem;
 }
 
 .time-span {
-  background: #080001;
-  width: 140px;
-  height: 120px;
-  padding: 15px;
-  border-radius: 5px;
-  color: #f94f6d;
+  width: 150px;
+  height: 125px;
 }
 
 .period {
-  background: #080001;
   width: 120px;
   height: 90px;
   margin-top: 50px;
 
-  padding: 15px;
-  border-radius: 5px;
-  color: #f94f6d;
   font-size: 4rem;
 }
 
 .game-btns {
+  margin-top: 50px;
+  align-items: center;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 10px;
-
-  margin-top: 50px;
 }
 
 .game-btn {
   width: 200px;
-  height: 45px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
 }
