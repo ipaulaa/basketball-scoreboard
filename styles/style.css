@@ -117,7 +117,49 @@ button:disabled {
 
 .score-btn {
   width: 45px;
-  gent: center;
+  font-size: 1.125rem;
+}
+
+button:not(:disabled):hover {
+  color: #fbbf24;
+  border-color: #fbbf24;
+}
+
+.score-btn:active {
+  scale: 0.95;
+}
+
+h3 {
+  font-size: 1.625rem;
+  margin: 60px 0 15px;
+}
+
+.fouls {
+  width: 115px;
+  height: 90px;
+
+  font-size: 4rem;
+}
+
+.add-foul,
+.game-btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.add-foul {
+  width: 80px;
+  margin-top: 15px;
+}
+
+section:has(.time) {
+  margin-top: 75px;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
   align-items: center;
   font-size: 6rem;
 }
