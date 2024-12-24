@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Basketball Scoreboard</title>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <img src="images/basketball.png" alt="Orange Basketball" />
+        <h1>Scoreboard</h1>
+      </header>
+      <main>
+        <section>
+          <h2>Home</h2>
+          <div class="score" id="home-score">0</div>
+          <div class="score-btns">
+            <button class="score-btn" id="home-1">+1</button>
+            <button class="score-btn" id="home-2">+2</button>
+            <button class="score-btn" id="home-3">+3</button>
+          </div>
+
+          <div>
+            <h3>Fouls</h3>
+            <div class="fouls" id="home-fouls">0</div>
+            <button id="home-foul">+Foul</button>
+          </div>
+        </section>
+        <section>
+          <div class="time">
+            <div id="minutes">15</div>
+            <p>:</p>
+            <div id="seconds">00</div>
+          </div>
+          <div class="period"></div>
+          <div class="game-btns">
+            <button class="game-btn" id="new-period">+Period</button>
+            <button class="game-btn" id="new-game">New Game</button>
+          </div>
+        </section>
+        <section>
+          <h2>Guest</h2>
+          <div class="score" id="guest-score">0</div>
+          <div class="score-btns">
+            <button class="score-btn" id="guest-1">+1</button>
+            <button class="score-btn" id="guest-2">+2</button>
+            <button class="score-btn" id="guest-3">+3</button>
+          </div>
+          <div>
+            <h3>Fouls</h3>
+            <div class="fouls" id="guest-fouls">0</div>
+            <button id="guest-foul">+Foul</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
