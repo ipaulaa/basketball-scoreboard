@@ -98,7 +98,7 @@ function startGame() {
   guestScore.textContent = `${guest.score}`;
   guestFouls.textContent = `${guest.fouls}`;
 
-  period = 0;
+  period = 1;
   periodEl.textContent = `${period}`;
 }
 
