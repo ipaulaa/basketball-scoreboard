@@ -40,15 +40,6 @@ let time = {
   seconds: 0
 };
 
-function getWinning() {
-  clearWinning();
-  if (home.score > guest.score) {
-    homeEl.classList.add("winning");
-  } else if (home.score < guest.score) {
-    guestEl.classList.add("winning");
-  }
-}
-
 function clearWinning() {
   if (homeEl.classList.contains("winning")) {
     homeEl.classList.remove("winning");
@@ -58,10 +49,21 @@ function clearWinning() {
   }
 }
 
-function updateScore(player) {
+function getWinning() {
+  clearWinning();
+  if (home.score > guest.score) {
+    homeEl.classList.add("winning");
+  } else if (home.score < guest.score) {
+    guestEl.classList.add("winning");
+  }
+}
+
+function updateScore(player, amount) {
   if (player === "home") {
+    home.score += amount;
     homeScore.textContent = `${home.score}`;
   } else {
+    guest.score += amount;
     guestScore.textContent = `${guest.score}`;
   }
   getWinning();
@@ -98,8 +100,13 @@ function startGame() {
   guestScore.textContent = `${guest.score}`;
   guestFouls.textContent = `${guest.fouls}`;
 
-  period = 1;
+  period = period === 0 ? 1 : 0;
   periodEl.textContent = `${period}`;
+
+  time.minutes = 0;
+  time.seconds = 0;
+  minutesEl.textContent = `${time.minutes}`.padStart(2, "0");
+  secondsEl.textContent = `${time.seconds}`.padStart(2, "0");
 }
 
 function getTime() {
@@ -107,6 +114,7 @@ function getTime() {
   interval = setInterval(() => {
     if (--time.total === 0) {
       newPeriod.disabled = false;
+      gameInProgress = false;
       clearInterval(interval);
     }
     time.minutes = Math.floor(time.total / 60);
@@ -117,35 +125,17 @@ function getTime() {
   }, 1000);
 }
 
-home1.addEventListener("click", () => {
-  home.score++;
-  updateScore("home");
-});
+home1.addEventListener("click", () => updateScore("home", 1));
 
-home2.addEventListener("click", () => {
-  home.score += 2;
-  updateScore("home");
-});
+home2.addEventListener("click", () => updateScore("home", 2));
 
-home3.addEventListener("click", () => {
-  home.score += 3;
-  updateScore("home");
-});
+home3.addEventListener("click", () => updateScore("home", 3));
 
-guest1.addEventListener("click", () => {
-  guest.score++;
-  updateScore("guest");
-});
+guest1.addEventListener("click", () => updateScore("guest", 1));
 
-guest2.addEventListener("click", () => {
-  guest.score += 2;
-  updateScore("guest");
-});
+guest2.addEventListener("click", () => updateScore("guest", 2));
 
-guest3.addEventListener("click", () => {
-  guest.score += 3;
-  updateScore("guest");
-});
+guest3.addEventListener("click", () => updateScore("guest", 3));
 
 homeFoul.addEventListener("click", () => {
   homeFouls.textContent = `${++home.fouls}`;
