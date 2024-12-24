@@ -68,3 +68,37 @@ h2 {
   justify-content: flex-end;
   align-items: flex-end;
 }
+
+.score-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.score-btn {
+  width: 45px;
+  height: 45px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.125rem;
+
+  border-radius: 5px;
+  border: 2px solid #9aabd8;
+
+  color: #9aabd8;
+  cursor: pointer;
+}
+
+.score-btn:hover {
+  color: #fbbf24;
+  border-color: #fbbf24;
+}
+
+.score-btn:active {
+  scale: 0.95;
+}
