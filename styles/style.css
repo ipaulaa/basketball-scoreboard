@@ -1,0 +1,32 @@
+@import "fonts.css";
+
+body {
+  color: #eee;
+  background: #1b244a;
+  font-family: "Cursed Timer", sans-serif;
+}
+
+.page {
+  width: 800px;
+  margin: 70px auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+header img {
+  width: 60px;
+}
+
+h1, h2, h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 3rem;
+}
