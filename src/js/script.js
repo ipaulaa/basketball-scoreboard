@@ -51,7 +51,6 @@ function clearWinner() {
     gameData.guest.dom.section.classList.remove("winner");
   if (gameData.home.dom.section.classList.contains("winner"))
     gameData.home.dom.section.classList.remove("winner");
-
 }
 
 function clearPeriod() {
