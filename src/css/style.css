@@ -138,7 +138,7 @@ button:active:not(:disabled) {
   color: #f94f6d;
 }
 
-.controls button {
+.controls > button {
   padding: 15px 30px;
   font-size: 2rem;
 }
