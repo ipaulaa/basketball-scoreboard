@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap"
+      rel="stylesheet"/>
+
+    <!-- <link rel="stylesheet" href="./src/css/reset.css"/> -->
+    <link rel="stylesheet" href="./src/css/style.css"/>
+
+    <title>Basketball Scoreboard</title>
+  </head>
+  <body>
+    <div class="scoreboard">
+      <header>
+        <img src="./src/assets/images/basketball.png" alt="Orange Basketball"/>
+        <h1>Basketball<br/>Scoreboard</h1>
+      </header>
+      <main>
+        <section class="home">
+          <h2>Home</h2>
+          <div class="data">
+            <p id="home-score" class="score">123</p>
+
+            <div>
+              <h3>Fouls</h3>
+              <p id="home-fouls" class="fouls">7</p>
+            </div>
+          </div>
+          <div class="btns">
+            <div>
+              <button id="btn-home-1">+1</button>
+              <button id="btn-home-2">+2</button>
+              <button id="btn-home-3">+3</button>
+            </div>
+            <button id="btn-home-foul">+Foul</button>
+          </div>
+        </section>
+
+        <section class="controls">
+          <p class="timer">13:59</p>
+          <h2>Period</h2>
+          <p class="period">3</p>
+
+          <div class="btns">
+            <button id="btn-period">+Period</button>
+            <button id="btn-quit">Quit</button>
+            <button id="btn-new">New</button>
+            <button id="btn-act">Stop</button>
+          </div>
+        </section>
+        <section class="guest">
+          <h2>Guest</h2>
+          <div class="data">
+            <p id="guest-score" class="score">168</p>
+
+            <div>
+              <h3>Fouls</h3>
+              <p id="guest-fouls" class="fouls">3</p>
+            </div>
+          </div>
+          <div class="btns">
+            <div>
+              <button id="btn-guest-1">+1</button>
+              <button id="btn-guest-2">+2</button>
+              <button id="btn-guest-3">+3</button>
+            </div>
+            <button id="btn-guest-foul">+Foul</button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>
