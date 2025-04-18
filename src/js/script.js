@@ -14,7 +14,7 @@ function addFoul(team) {
 }
 
 function updateTimer(seconds) {
-  const mins = `${Math.round(seconds / 60)}`.padStart(2, "0");
+  const mins = `${Math.floor(seconds / 60)}`.padStart(2, "0");
   const secs = `${seconds % 60}`.padStart(2, "0");
   gameData.timer.dom.textContent = `${mins}:${secs}`;
 }
@@ -58,9 +58,11 @@ function clearPeriod() {
   gameData.period.dom.textContent = `${gameData.period.period}`;
 }
 
-function clear() {
+function clearScoreboard() {
   clearGameData();
+  clearInterval(gameData.timer.interval);
   clearPeriod();
+  actionBtn.textContent = "Start";
 }
 
 const GAME_TIME = 720;
@@ -107,7 +109,7 @@ const guestBtnFoul = document.getElementById("guest-btn-foul");
 
 const periodBtn = document.getElementById("period-btn");
 
-quitBtn.addEventListener("click", () => clear);
+quitBtn.addEventListener("click", clearScoreboard);
 
 actionBtn.addEventListener("click", e => {
   if (e.target.textContent === "Start" || e.target.textContent === "Continue") {
