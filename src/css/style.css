@@ -80,7 +80,7 @@ section {
   font-size: 6rem;
 }
 
-.btns {
+.score .btns {
   width: 150px;
   display: flex;
   justify-content: space-between;
@@ -133,12 +133,17 @@ button:active:not(:disabled) {
   align-self: stretch;
 }
 
+.controls .btns {
+  width: 125px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
 .period p {
   font-size: 5rem;
   color: #f94f6d;
-}
-
-.controls > button {
-  padding: 15px 30px;
-  font-size: 2rem;
 }
