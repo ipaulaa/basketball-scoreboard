@@ -40,10 +40,12 @@ function clearGameData() {
   gameData.guest.fouls = 0;
   gameData.guest.dom.fouls.textContent = `${gameData.guest.fouls}`;
 
+  clearWinner();
+}
+
+function clearTimer() {
   gameData.timer.seconds = GAME_TIME;
   gameData.timer.dom.textContent = "00:00";
-
-  clearWinner();
 }
 
 function clearWinner() {
@@ -106,6 +108,7 @@ quitBtn.addEventListener("click", () => {
   clearGameData();
   clearInterval(gameData.timer.interval);
   clearPeriod();
+  clearTimer();
   actionBtn.textContent = "Start";
   toggleGameButtons(true);
 });
