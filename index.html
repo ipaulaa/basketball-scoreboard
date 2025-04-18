@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap"
       rel="stylesheet"/>
 
-    <!-- <link rel="stylesheet" href="./src/css/reset.css"/> -->
+    <link rel="stylesheet" href="./src/css/reset.css"/>
     <link rel="stylesheet" href="./src/css/style.css"/>
 
     <title>Basketball Scoreboard</title>
@@ -24,52 +24,50 @@
       </header>
       <main>
         <section class="home">
-          <h2>Home</h2>
-          <div class="data">
-            <p id="home-score" class="score">123</p>
-
-            <div>
-              <h3>Fouls</h3>
-              <p id="home-fouls" class="fouls">7</p>
-            </div>
+          <div class="score">
+            <h2>Home</h2>
+            <p id="home-score">123</p>
           </div>
+
           <div class="btns">
-            <div>
-              <button id="home-btn-1">+1</button>
-              <button id="home-btn-2">+2</button>
-              <button id="home-btn-3">+3</button>
-            </div>
+            <button id="home-btn-1">+1</button>
+            <button id="home-btn-2">+2</button>
+            <button id="home-btn-3">+3</button>
+          </div>
+
+          <div class="fouls">
+            <h3>Fouls</h3>
+            <p id="home-fouls">7</p>
             <button id="home-btn-foul">+Foul</button>
           </div>
         </section>
 
         <section class="controls">
           <p class="timer">13:59</p>
-          <h2>Period</h2>
-          <div>
-            <p class="period">3</p class="period">
-            <button id="btn-period">+Period</button>
-          </div>
           <!-- New / Quit / Stop / Continue -->
           <button id="btn-action">New</button>
+          <div class="period">
+            <h2>Period</h2>
+            <p>3</p>
+            <button id="btn-period">+Period</button>
+          </div>
         </section>
 
         <section class="guest">
-          <h2>Guest</h2>
-          <div class="data">
-            <p id="guest-score" class="score">168</p>
-
-            <div>
-              <h3>Fouls</h3>
-              <p id="guest-fouls" class="fouls">3</p>
-            </div>
+          <div class="score">
+            <h2>Guest</h2>
+            <p id="guest-score">98</p>
           </div>
+
           <div class="btns">
-            <div>
-              <button id="guest-btn-1">+1</button>
-              <button id="guest-btn-2">+2</button>
-              <button id="guest-btn-3">+3</button>
-            </div>
+            <button id="guest-btn-1">+1</button>
+            <button id="guest-btn-2">+2</button>
+            <button id="guest-btn-3">+3</button>
+          </div>
+
+          <div class="fouls">
+            <h3>Fouls</h3>
+            <p id="guest-fouls">3</p>
             <button id="guest-btn-foul">+Foul</button>
           </div>
         </section>
