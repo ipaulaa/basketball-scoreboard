@@ -58,13 +58,6 @@ function clearPeriod() {
   gameData.period.dom.textContent = `${gameData.period.period}`;
 }
 
-function clearScoreboard() {
-  clearGameData();
-  clearInterval(gameData.timer.interval);
-  clearPeriod();
-  actionBtn.textContent = "Start";
-}
-
 const GAME_TIME = 720;
 const gameData = {
   period: { period: 0, dom: document.getElementById("period") },
@@ -109,7 +102,13 @@ const guestBtnFoul = document.getElementById("guest-btn-foul");
 
 const periodBtn = document.getElementById("period-btn");
 
-quitBtn.addEventListener("click", clearScoreboard);
+quitBtn.addEventListener("click", () => {
+  clearGameData();
+  clearInterval(gameData.timer.interval);
+  clearPeriod();
+  actionBtn.textContent = "Start";
+  toggleGameButtons(true);
+});
 
 actionBtn.addEventListener("click", e => {
   if (e.target.textContent === "Start" || e.target.textContent === "Continue") {
