@@ -60,15 +60,15 @@ function clearPeriod() {
 
 const GAME_TIME = 720;
 const gameData = {
-  period: { period: 0, dom: document.getElementById("period") },
+  period: {period: 0, dom: document.getElementById("period")},
   home: {
     score: 0,
     fouls: 0,
     dom: {
       section: document.querySelector(".home"),
       score: document.getElementById("home-score"),
-      fouls: document.getElementById("home-fouls")
-    }
+      fouls: document.getElementById("home-fouls"),
+    },
   },
   guest: {
     score: 0,
@@ -76,14 +76,14 @@ const gameData = {
     dom: {
       section: document.querySelector(".guest"),
       score: document.getElementById("guest-score"),
-      fouls: document.getElementById("guest-fouls")
-    }
+      fouls: document.getElementById("guest-fouls"),
+    },
   },
   timer: {
     seconds: GAME_TIME,
     interval: null,
-    dom: document.getElementById("timer")
-  }
+    dom: document.getElementById("timer"),
+  },
 };
 
 const gameBtns = document.querySelectorAll(".game-btn");
@@ -127,7 +127,7 @@ actionBtn.addEventListener("click", e => {
         periodBtn.disabled = false;
       }
     }, 1000);
-  } else if (e.target.textContent === "Pause") {
+  } else if (e.target.textContent === "Stop") {
     e.target.textContent = "Continue";
     clearInterval(gameData.timer.interval);
     periodBtn.disabled = false;
