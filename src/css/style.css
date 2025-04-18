@@ -27,17 +27,20 @@ h1 {
 }
 
 main {
+  min-width: 700px;
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 50px;
 }
 
 section {
 }
 
 .score,
-.fouls {
+.fouls,
+.period {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -54,13 +57,20 @@ section {
 }
 
 .panel {
+  width: fit-content;
   padding: 20px 20px 10px;
+
+  color: #fbbf24;
   background-color: #080001;
   border-radius: 8px;
 
   font-family: "Digital 7", monospace;
   line-height: 0.8;
   text-align: right;
+}
+
+.timer {
+  font-size: 6.5rem;
 }
 
 .score p {
@@ -77,8 +87,7 @@ section {
 }
 
 button:disabled {
-  color: #9ca3af;
-  border-color: #9ca3af;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
@@ -102,17 +111,34 @@ button:active:not(:disabled) {
   transform: scale(0.96);
 }
 
-.fouls {
+.fouls,
+.period {
   gap: 15px;
 }
 
-.fouls h3 {
+.fouls h3,
+.period h2 {
   font-size: 1.5rem;
 }
 
 .fouls p {
-  width: fit-content;
-  color: #fbbf24;
-
   font-size: 4.5rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.period p {
+  font-size: 5rem;
+  color: #f94f6d;
+}
+
+.controls button {
+  padding: 15px 30px;
+  font-size: 2rem;
 }
