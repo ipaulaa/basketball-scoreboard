@@ -3,6 +3,25 @@
   src: url("../assets/fonts/digital-7.ttf") format("truetype");
 }
 
+body {
+  color: #fff;
+  background-color: #1b244a;
+  font-family: "Sigmar One", sans-serif;
+}
+
+header {
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 img {
-  width: 50px;
+  width: 80px;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.125;
 }
