@@ -7,6 +7,7 @@ body {
   color: #fff;
   background-color: #1b244a;
   font-family: "Sigmar One", sans-serif;
+  line-height: 1;
 }
 
 header {
@@ -23,7 +24,6 @@ img {
 
 h1 {
   font-size: 2rem;
-  line-height: 1;
 }
 
 main {
@@ -36,30 +36,38 @@ main {
 section {
 }
 
-.score {
+.score,
+.fouls {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.score {
   gap: 20px;
+  margin-bottom: 50px;
 }
 
 .score h2 {
   font-size: 3rem;
-  line-height: 1;
 }
 
-.score p {
-  width: 172px;
+.panel {
   padding: 20px 20px 10px;
-  color: #f94f6d;
   background-color: #080001;
   border-radius: 8px;
 
   font-family: "Digital 7", monospace;
-  font-size: 6rem;
   line-height: 0.8;
   text-align: right;
+}
+
+.score p {
+  width: 172px;
+  color: #f94f6d;
+
+  font-size: 6rem;
 }
 
 .btns {
@@ -68,22 +76,43 @@ section {
   justify-content: space-between;
 }
 
-.btns button {
+button:disabled {
+  color: #9ca3af;
+  border-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+button {
   padding: 10px;
   border: 1px solid #fff;
   border-radius: 8px;
+  cursor: pointer;
+
   font-family: "Digital 7", monospace;
   font-size: 1.5rem;
   line-height: 0.8;
-
-  cursor: pointer;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   color: #47ffb6;
   border-color: #47ffb6;
 }
 
-button:active {
+button:active:not(:disabled) {
   transform: scale(0.96);
+}
+
+.fouls {
+  gap: 15px;
+}
+
+.fouls h3 {
+  font-size: 1.5rem;
+}
+
+.fouls p {
+  width: fit-content;
+  color: #fbbf24;
+
+  font-size: 4.5rem;
 }
