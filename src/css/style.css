@@ -23,5 +23,67 @@ img {
 
 h1 {
   font-size: 2rem;
-  line-height: 1.125;
+  line-height: 1;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+section {
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.score h2 {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.score p {
+  width: 172px;
+  padding: 20px 20px 10px;
+  color: #f94f6d;
+  background-color: #080001;
+  border-radius: 8px;
+
+  font-family: "Digital 7", monospace;
+  font-size: 6rem;
+  line-height: 0.8;
+  text-align: right;
+}
+
+.btns {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns button {
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  font-family: "Digital 7", monospace;
+  font-size: 1.5rem;
+  line-height: 0.8;
+
+  cursor: pointer;
+}
+
+button:hover {
+  color: #47ffb6;
+  border-color: #47ffb6;
+}
+
+button:active {
+  transform: scale(0.96);
 }
