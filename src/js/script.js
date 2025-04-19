@@ -13,9 +13,9 @@ function addFoul(team) {
   gameData[team].dom.fouls.textContent = `${gameData[team].fouls}`;
 }
 
-function updateTimer(seconds) {
-  const mins = `${Math.floor(seconds / 60)}`.padStart(2, "0");
-  const secs = `${seconds % 60}`.padStart(2, "0");
+function updateTimer() {
+  const mins = `${Math.floor(gameData.timer.seconds / 60)}`.padStart(2, "0");
+  const secs = `${gameData.timer.seconds % 60}`.padStart(2, "0");
   gameData.timer.dom.textContent = `${mins}:${secs}`;
 }
 
