@@ -2,15 +2,24 @@ function toggleGameButtons(disabled) {
   gameBtns.forEach(btn => (btn.disabled = disabled));
 }
 
+
+function updateScore(team) {
+  gameData[team].dom.score.textContent = `${gameData[team].score}`;
+}
+
 function addScore(team, increment) {
   gameData[team].score += increment;
-  gameData[team].dom.score.textContent = `${gameData[team].score}`;
+  updateScore(team);
   highlightWinner();
+}
+
+function updateFoul(team) {
+  gameData[team].dom.fouls.textContent = `${gameData[team].fouls}`;
 }
 
 function addFoul(team) {
   gameData[team].fouls++;
-  gameData[team].dom.fouls.textContent = `${gameData[team].fouls}`;
+  updateFoul(team);
 }
 
 function updateTimer() {
@@ -29,16 +38,16 @@ function highlightWinner() {
 
 function clearGameData() {
   gameData.home.score = 0;
-  gameData.home.dom.score.textContent = `${gameData.home.score}`;
+  updateScore("home");
 
   gameData.home.fouls = 0;
-  gameData.home.dom.fouls.textContent = `${gameData.home.fouls}`;
+  updateFoul("home");
 
   gameData.guest.score = 0;
-  gameData.guest.dom.score.textContent = `${gameData.guest.score}`;
+  updateScore("guest");
 
   gameData.guest.fouls = 0;
-  gameData.guest.dom.fouls.textContent = `${gameData.guest.fouls}`;
+  updateFoul("guest");
 
   clearWinner();
 }
@@ -49,10 +58,8 @@ function clearTimer() {
 }
 
 function clearWinner() {
-  if (gameData.guest.dom.section.classList.contains("winner"))
-    gameData.guest.dom.section.classList.remove("winner");
-  if (gameData.home.dom.section.classList.contains("winner"))
-    gameData.home.dom.section.classList.remove("winner");
+  gameData.guest.dom.section.classList.remove("winner");
+  gameData.home.dom.section.classList.remove("winner");
 }
 
 function clearPeriod() {
@@ -62,6 +69,7 @@ function clearPeriod() {
 
 const GAME_TIME = 720;
 const gameData = {
+  state: "idle",
   period: {period: 0, dom: document.getElementById("period")},
   home: {
     score: 0,
@@ -114,8 +122,9 @@ quitBtn.addEventListener("click", () => {
 });
 
 actionBtn.addEventListener("click", e => {
-  if (e.target.textContent === "Start" || e.target.textContent === "Continue") {
+  if (gameData.state === "idle") {
     e.target.textContent = "Stop";
+    gameData.state = "running";
     periodBtn.disabled = true;
     toggleGameButtons(false);
     clearGameData();
@@ -125,17 +134,18 @@ actionBtn.addEventListener("click", e => {
       if (gameData.timer.seconds === 0) {
         clearInterval(gameData.timer.interval);
         e.target.textContent = "Start";
+        gameData.state = "idle";
         gameData.timer.seconds = GAME_TIME;
         toggleGameButtons(true);
         periodBtn.disabled = false;
       }
     }, 1000);
-  } else if (e.target.textContent === "Stop") {
+  } else if (gameData.state === "running") {
     e.target.textContent = "Continue";
+    gameData.state = "idle";
     clearInterval(gameData.timer.interval);
     periodBtn.disabled = false;
     toggleGameButtons(true);
-    clear();
   }
 });
 
