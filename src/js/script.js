@@ -2,7 +2,6 @@ function toggleGameButtons(disabled) {
   gameBtns.forEach(btn => (btn.disabled = disabled));
 }
 
-
 function updateScore(team) {
   gameData[team].dom.score.textContent = `${gameData[team].score}`;
 }
@@ -70,15 +69,15 @@ function clearPeriod() {
 const GAME_TIME = 720;
 const gameData = {
   state: "idle",
-  period: {period: 0, dom: document.getElementById("period")},
+  period: { period: 0, dom: document.getElementById("period") },
   home: {
     score: 0,
     fouls: 0,
     dom: {
       section: document.querySelector(".home"),
       score: document.getElementById("home-score"),
-      fouls: document.getElementById("home-fouls"),
-    },
+      fouls: document.getElementById("home-fouls")
+    }
   },
   guest: {
     score: 0,
@@ -86,14 +85,14 @@ const gameData = {
     dom: {
       section: document.querySelector(".guest"),
       score: document.getElementById("guest-score"),
-      fouls: document.getElementById("guest-fouls"),
-    },
+      fouls: document.getElementById("guest-fouls")
+    }
   },
   timer: {
     seconds: GAME_TIME,
     interval: null,
-    dom: document.getElementById("timer"),
-  },
+    dom: document.getElementById("timer")
+  }
 };
 
 const gameBtns = document.querySelectorAll(".game-btn");
